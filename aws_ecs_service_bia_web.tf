@@ -31,9 +31,8 @@ resource "aws_ecs_service" "bia" {
     container_port   = 8080
   }
 
-  #   wait_for_steady_state = false  # Adicione isso para evitar a espera por estado estável
-
-  # timeouts {
-  #   delete = "30m"  # Aumente o tempo de espera para a exclusão
-  # }
+    wait_for_steady_state = false  # Adicione isso para evitar a espera por estado estável
+  timeouts {
+    delete = "30m"  # Aumente o tempo de espera para a exclusão
+  }
 }
